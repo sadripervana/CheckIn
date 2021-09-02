@@ -50,7 +50,6 @@ class DatabaseTable {
   }
 
   public function save($record) {
-    // var_dump($record);die;
     try {
       if($record[$this->primaryKey] == ''){
         $record[$this->primaryKey] = null;

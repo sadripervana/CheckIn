@@ -25,4 +25,3 @@
 <?php endfor; ?>
 
 </table>
-<!--   <input type='button' id='btn' data-role='button' data-inline='true data-icon='heart' name='button1' onclick=\"hide()\" > -->

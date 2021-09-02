@@ -9,7 +9,7 @@
     <?php
 
     require_once 'Framework/DatabaseTable.php';
-    require_once 'includes/DatabaseConnection.inc.php';
+    require_once 'index.php';
 
     function query($pdo, $sql, $parameters = []){
       $query = $pdo->prepare($sql);
@@ -28,6 +28,19 @@
      surname VARCHAR(15),
      checkin TINYINT DEFAULT 0 NOT NULL,
      INDEX(name(5))');
+
+
+     $record = ['id'=>1,'name'=>'user1','surname'=>'user1s','checkin'=>'0'];
+     $database->save($record);
+
+     $record = ['id'=>2,'name'=>'user2','surname'=>'user2s','checkin'=>'0'];
+     $database->save($record);
+
+     $record = ['id'=>3,'name'=>'user3','surname'=>'user3s','checkin'=>'0'];
+     $database->save($record);
+
+     $record = ['id'=>4,'name'=>'user4','surname'=>'user4s','checkin'=>'0'];
+     $database->save($record);
 
     ?>
   </body>

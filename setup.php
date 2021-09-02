@@ -8,7 +8,6 @@
     <h1>Setting up Database data</h1>
     <?php
 
-    require_once 'Framework/DatabaseTable.php';
     require_once 'index.php';
 
     function query($pdo, $sql, $parameters = []){

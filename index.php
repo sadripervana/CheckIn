@@ -45,7 +45,6 @@ echo <<<_END
     </div>
     <div data-role="footer">
       <h4>Web App from SADRI PERVANA</h4>
-      <input type='button' id='btn' name='button1' onclick="hide()" value='1'>
     </div>
   </body>
 </html>

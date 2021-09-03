@@ -1,17 +1,16 @@
 
-  <?php //Calculate the number of pages
+  <?php
 
-
-    echo <<<_END
+  echo <<<_END
           </div><br>
         </div>
         <div data-role="footer">
-          <h4>Web App from SADRI PERVANA</h4>
+          <h4>Web App from SADRI PERVANA </h4>
         </div>
       </body>
     </html>
-    _END;
-      ?>
+  _END;
+?>
 
-      <script src="script.js">
-      </script>
+<script src="script.js">
+</script>

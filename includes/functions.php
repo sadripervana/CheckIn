@@ -69,7 +69,7 @@ function save($pdo, $table, $primaryKey, $record) {
   }
 }
 
-function findAll($pdo, $table, $orderBy = null, $limit = null, $offset = null, $checkin){
+function findAll($pdo, $table, $orderBy = null, $limit = null, $offset = null, $checkin = []){
 $query = 'SELECT * FROM `' . $table . '` WHERE `checkin`=' . $checkin . '';
 
 if($orderBy != null) {

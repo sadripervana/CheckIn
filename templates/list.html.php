@@ -51,3 +51,8 @@ for($i = 1; $i <= $numPages; $i++){
 }
 ?>
 </h3>
+<?php
+echo <<<_END
+<div data-role="footer">
+
+_END; ?>

@@ -61,6 +61,7 @@ table {
   grid-template-columns: auto auto auto;
   grid-gap: 50px;
 }
+
 #parent {
   text-align: justify;
   /* font-size: 0.1px; /* IE 9/10 fix */ */

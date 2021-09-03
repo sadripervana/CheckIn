@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
   require_once 'templates/header.html.php';
   require_once 'Framework/DatabaseTable.php';
@@ -54,6 +57,5 @@ switch ($case) {
   // echo loadTemplate('list.html.php',$total,$variables);
   break;
 }
-
 require_once 'templates/footer.html.php';
 ?>

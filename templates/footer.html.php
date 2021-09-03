@@ -1,14 +1,6 @@
-Select page:
+
   <?php //Calculate the number of pages
-    $numPages = ceil($total['COUNT(*)']/10);
-    for($j = 1; $j <= $numPages; $j++){
-      if($j == $page){
-        echo "<a class='currentpage'  href='index.php?p=home&page=$j&r=$randstr'> $j </a>";
-      }
-     else {
-      echo "<a href='index.php?p=home&page=$j&r=$randstr'> $j </a>";
-      }
-    }
+
 
     echo <<<_END
           </div><br>

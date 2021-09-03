@@ -34,20 +34,22 @@ $offset = ($page-1)*10;
      }
     }
 
-$total = total($pdo, 'guest');
-$variables = findAll($pdo, 'guest','id',12,$offset);
+$totalGuest = total($pdo, 'guest', 0);
+$totalCheckedin = total($pdo, 'guest', 1);
+$guest = findAll($pdo, 'guest','id',10,$offset,0);
+$checkedin = findAll($pdo, 'guest','id',10,$offset,1);
 
 
 $case = $_GET['p'];
 switch ($case) {
   case 'home':
-  echo loadTemplate('list.html.php',$total,$variables,$offset);
+  echo loadTemplate('list.html.php',$totalGuest,$guest,$offset, $page, $randstr, $case);
     break;
   case 'checkedin':
-  echo loadTemplate('checkedin.html.php',$total,$variables,$offset);
+  echo loadTemplate('checkedin.html.php',$totalCheckedin,$checkedin,$offset, $page, $randstr, $case);
     break;
   case 'addguest':
-  echo loadTemplate('addguest.html.php',$total,$variables, $offset);
+  echo loadTemplate('addguest.html.php');
    break;
   default:
   // echo loadTemplate('list.html.php',$total,$variables);

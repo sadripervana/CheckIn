@@ -1,10 +1,13 @@
 <?php
 
- function loadTemplate($templateFileName, $t = [],$v =[],$offset =[]){
+ function loadTemplate($templateFileName, $t = [],$v =[],$offset =[], $p = [], $r = [], $c = []){
 
   ob_start();
   $total = $t;
   $variables = $v;
+  $page = $p;
+  $randstr = $r;
+  $case = $c;
   include __DIR__ . '/../templates/' . $templateFileName;
   return ob_get_clean();
 }
@@ -66,8 +69,8 @@ function save($pdo, $table, $primaryKey, $record) {
   }
 }
 
-function findAll($pdo, $table, $orderBy = null, $limit = null, $offset = null){
-$query = 'SELECT * FROM `' . $table . '`';
+function findAll($pdo, $table, $orderBy = null, $limit = null, $offset = null, $checkin){
+$query = 'SELECT * FROM `' . $table . '` WHERE `checkin`=' . $checkin . '';
 
 if($orderBy != null) {
   $query .= ' ORDER BY ' . $orderBy;
@@ -86,8 +89,8 @@ $result = query($pdo, $query);
 return $result->fetchAll();
 }
 
-function total($pdo, $table){
-  $query = query($pdo,'SELECT COUNT(*) FROM `' . $table . '`');
+function total($pdo, $table, $checkin){
+  $query = query($pdo,'SELECT COUNT(*) FROM `' . $table . '` WHERE `checkin`=' . $checkin . '');
   $result = $query->fetchAll();
   if (count($result) > 0) {
       return $result[0];
@@ -96,6 +99,7 @@ function total($pdo, $table){
       return null;
   }
 }
+
 
 function findById($pdo, $table,$primaryKey, $value){
 $query = 'SELECT * FROM `' . $table . '` WHERE `' . $primaryKey . '` = :value';

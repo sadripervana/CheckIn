@@ -1,5 +1,7 @@
 * {
   text-align: center;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 
@@ -8,7 +10,7 @@ table, td {
 }
 
 table {
-  width: 100%;
+  width: 60%;
   border-collapse: collapse;
 }
 
@@ -23,8 +25,11 @@ table {
 }
 
 .addguest {
-  width: 100px;
-  height: 100px;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+  width: 200px;
+  height: 200px;
   color: red;
 }
 

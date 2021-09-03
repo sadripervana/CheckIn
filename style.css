@@ -21,3 +21,9 @@ table {
   color: green;
   font-weight: bolder;
 }
+
+.addguest {
+  width: 100px;
+  height: 100px;
+  color: red;
+}

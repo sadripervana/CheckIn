@@ -7,24 +7,31 @@
 
   echo "<div class='center'>Welcome to the Party";
 
-$database = new \FRAMEWORK\DatabaseTable($pdo, 'guest', 'id');
-if(isset($_POST['id'])){
+// $database = new \FRAMEWORK\DatabaseTable($pdo, 'guest', 'id');
+  if(isset($_POST['id'])){
+    $primaryKey =$_POST['id'] ;
+    $primaryKey[] = 1;
 
-  $primaryKey = $_POST['id'];
-  $primaryKey[] = 1;
-
-
-  foreach ($primaryKey as $key => $value ) {
-    $values[] = $value;
+    foreach ($primaryKey as $key => $value ) {
+      $values[] = $value;
+    }
+    $record = ['id'=>$values[0],'name'=>$values[1],'surname'=>$values[2],'checkin'=>'1'];
+    save($pdo, 'guest', 'id', $record);
+    header('location: index.php?p=home&r=$randstr');
   }
-  $record = ['id'=>$values[0],'name'=>$values[1],'surname'=>$values[2],'checkin'=>'1'];
 
-  $database->save($record);
-  header('location: index.php?p=home&r=$randstr');
-}
+    if(isset($_POST['name'] )){
+      if(isset($_POST['surname'])){
+      $name = sanitizeString($_POST['name']) ;
+      $surname = sanitizeString($_POST['surname']);
+      $record = ['id'=>null ,'name'=>$name,'surname'=>$surname,'checkin'=>'0'];
+      save($pdo, 'guest', 'id', $record);
+      header('location: index.php?p=home&r=$randstr');
+     }
+    }
 
-$total = $database->total();
-$variables = $database->findAll('id',10,0);
+$total = total($pdo, 'guest');
+$variables = findAll($pdo, 'guest','id',10,0);
 
 $case = $_GET['p'];
 switch ($case) {
@@ -33,8 +40,10 @@ switch ($case) {
     break;
   case 'checkedin':
   echo loadTemplate('checkedin.html.php',$total,$variables);
-  case 'unpermitted':
-  echo loadTemplate('unpermitted.html.php',$total,$variables);
+    break;
+  case 'addguest':
+  echo loadTemplate('addguest.html.php',$total,$variables);
+   break;
   default:
   // echo loadTemplate('list.html.php',$total,$variables);
   break;

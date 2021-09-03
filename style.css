@@ -5,32 +5,29 @@
 }
 
 
-table, td {
+ul {
   border: 1px solid black;
+  justify-content: center;
+  font-family: 'Lobster', cursive;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.list {
+  width: 40%;
+  justify-content: center;
 }
 
 table {
   width: 60%;
   border-collapse: collapse;
 }
-
-#tablehead {
-  color: red ;
-  font-weight: bolder;
-}
-
-#checkedin {
-  color: green;
-  font-weight: bolder;
-}
-
 .addguest {
   margin: 0 auto;
   justify-content: center;
   text-align: center;
   width: 200px;
   height: 200px;
-  color: red;
 }
 
 .currentpage:before {
@@ -39,4 +36,35 @@ table {
 
 .currentpage:after {
   content: "]";
+}
+
+ .one {
+  color: blue;
+}
+
+.two {
+  color: blue;
+}
+
+.thre {
+  color: red;
+}
+
+#top {
+  border-bottom: 3px solid black;
+}
+
+.top {
+  display: grid;
+    border-bottom: 1px solid black;
+  align-content: space-evenly;
+  grid-template-columns: auto auto auto;
+  grid-gap: 50px;
+}
+#parent {
+  text-align: justify;
+  /* font-size: 0.1px; /* IE 9/10 fix */ */
+}
+#parent li {
+  display: inline-block;
 }

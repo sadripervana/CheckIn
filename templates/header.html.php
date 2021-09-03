@@ -14,6 +14,9 @@ $randstr = substr(md5(rand()), 0, 7);
       <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
       <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
       <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   _INIT;
 
   echo <<<_MAIN
@@ -37,3 +40,4 @@ $randstr = substr(md5(rand()), 0, 7);
               data-transition="slide" href='index.php?p=addguest&r=$randstr''>Add Guest</a>
           </div>
   _GUEST;
+  echo "<image src='image.jpeg' width='40%' height='250px' >";

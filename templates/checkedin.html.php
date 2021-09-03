@@ -1,20 +1,22 @@
-<table style="border:1px solid black" >
-  <tr id="checkedin">
-    <td>Name</td>
-    <td>Surname</td>
-  </tr>
+  <h1> Checked In</h1>;
+<div class="list">
+  <ul id="parent" data-role="listview" data-inline='true' data-filter="true" data-filter-placeholder="Search guest..." data-inset="true">
+    <div id="top" class="top"><span class="one">Name</span><span class="two">Surname</span></div>
 
-  <?php for($i =0; $i < $total['COUNT(*)'] - $offset && $i < 10; $i++): ?>
-      <?php if($variables[$i]['checkin'] == 1): ?>
-    <tr>
-    <td><?php echo $variables[$i]['name'];  ?></td>
-    <td><?php echo $variables[$i]['surname'];  ?></td>
-  </tr>
-  <?php endif; ?>
+  <?php
+    for($i =0; $i < ($total['COUNT(*)'] - $offset) && $i < 10; $i++):
+  ?>
+  <?php  if($variables[$i]['checkin'] == 1): ?>
+  <div class="top">
+    <li class="one"><?= htmlspecialchars($variables[$i]['name'], ENT_QUOTES, 'UTF-8') ?></li>
+      <li class="two"><?= htmlspecialchars($variables[$i]['surname'], ENT_QUOTES, 'UTF-8')?></li>
+
+ </div>
+<?php endif; ?>
 <?php endfor; ?>
+</ul>
+</div>
 
-
-</table>
 <h3>Select page:
 <?php
 

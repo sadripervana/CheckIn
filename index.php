@@ -5,7 +5,6 @@
   require_once 'includes/DatabaseConnection.inc.php';
   require_once 'includes/functions.php';
 
-  echo "<div class='center'>Welcome to the Party";
 
 // $database = new \FRAMEWORK\DatabaseTable($pdo, 'guest', 'id');
 $page =  $_GET['page'] ?? 1;

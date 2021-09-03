@@ -1,6 +1,6 @@
 <?php
 
- function loadTemplate($templateFileName, $t = [],$v =[]){
+ function loadTemplate($templateFileName, $t = [],$v =[],$offset =[]){
 
   ob_start();
   $total = $t;

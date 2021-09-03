@@ -4,7 +4,8 @@
     <td>Surname</td>
     <td>CheckIN</td>
   </tr>
-  <?php for($i =0; $i <$total['COUNT(*)']; $i++): ?>
+
+  <?php for($i =1; $i <= $total['COUNT(*)'] - $offset && $i <= 11; $i++): ?>
   <?php if($variables[$i]['checkin'] == 0): ?>
     <tr>
     <td id="<?= htmlspecialchars($variables[$i]['id'], ENT_QUOTES, 'UTF-8')?>"><?= htmlspecialchars($variables[$i]['name'], ENT_QUOTES, 'UTF-8') ?></td>

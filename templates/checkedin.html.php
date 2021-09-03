@@ -5,7 +5,7 @@
     <td>CheckIN</td>
   </tr>
 
-  <?php for($i =0; $i <$total['COUNT(*)']; $i++): ?>
+  <?php for($i =1; $i <= $total['COUNT(*)'] - $offset && $i <= 11; $i++): ?>
       <?php if($variables[$i]['checkin'] == 1): ?>
     <tr>
     <td><?php echo $variables[$i]['name'];  ?></td>

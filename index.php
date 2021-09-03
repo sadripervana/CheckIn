@@ -8,6 +8,10 @@
   echo "<div class='center'>Welcome to the Party";
 
 // $database = new \FRAMEWORK\DatabaseTable($pdo, 'guest', 'id');
+$page =  $_GET['page'] ?? 1;
+$offset = ($page-1)*10;
+
+
   if(isset($_POST['id'])){
     $primaryKey =$_POST['id'] ;
     $primaryKey[] = 1;
@@ -31,33 +35,24 @@
     }
 
 $total = total($pdo, 'guest');
-$variables = findAll($pdo, 'guest','id',10,0);
+$variables = findAll($pdo, 'guest','id',12,$offset);
+
 
 $case = $_GET['p'];
 switch ($case) {
   case 'home':
-  echo loadTemplate('list.html.php',$total,$variables);
+  echo loadTemplate('list.html.php',$total,$variables,$offset);
     break;
   case 'checkedin':
-  echo loadTemplate('checkedin.html.php',$total,$variables);
+  echo loadTemplate('checkedin.html.php',$total,$variables,$offset);
     break;
   case 'addguest':
-  echo loadTemplate('addguest.html.php',$total,$variables);
+  echo loadTemplate('addguest.html.php',$total,$variables, $offset);
    break;
   default:
   // echo loadTemplate('list.html.php',$total,$variables);
   break;
 }
 
-echo <<<_END
-      </div><br>
-    </div>
-    <div data-role="footer">
-      <h4>Web App from SADRI PERVANA</h4>
-    </div>
-  </body>
-</html>
-_END;
+require_once 'templates/footer.html.php';
 ?>
-<script src="script.js">
-</script>

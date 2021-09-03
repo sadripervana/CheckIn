@@ -27,3 +27,11 @@ table {
   height: 100px;
   color: red;
 }
+
+.currentpage:before {
+  content: "[";
+}
+
+.currentpage:after {
+  content: "]";
+}

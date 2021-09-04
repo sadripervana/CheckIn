@@ -36,10 +36,9 @@ $offset = ($page-1)*10;
   $search = [];
   $totalsearch = [];
     if (isset($_POST['submit-search'])) {
-      $like = sanitizeString($_POST['submit']);
-      $search = findAll($pdo, 'guest','id',10,$offset,0, $like);
-      $totalsearch =  total($pdo, 'guest', 1, $like);
-
+      $like = sanitizeString($_POST['search']);
+      $search = findAll($pdo, 'guest','id',10, $offset, 0, $like);
+      $totalsearch = total($pdo, 'guest', 1, $like);
       header('location: index.php?p=search&r=$randstr');
     }
 

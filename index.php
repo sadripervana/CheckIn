@@ -4,12 +4,9 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
   require_once 'templates/header.html.php';
-  require_once 'Framework/DatabaseTable.php';
   require_once 'includes/DatabaseConnection.inc.php';
   require_once 'includes/functions.php';
 
-
-// $database = new \FRAMEWORK\DatabaseTable($pdo, 'guest', 'id');
 $page =  $_GET['page'] ?? 1;
 $offset = ($page-1)*10;
 
@@ -36,6 +33,16 @@ $offset = ($page-1)*10;
      }
     }
 
+  $search = [];
+  $totalsearch = [];
+    if (isset($_POST['submit-search'])) {
+      $like = sanitizeString($_POST['submit']);
+      $search = findAll($pdo, 'guest','id',10,$offset,0, $like);
+      $totalsearch =  total($pdo, 'guest', 1, $like);
+
+      header('location: index.php?p=search&r=$randstr');
+    }
+
 $totalGuest = total($pdo, 'guest', 0);
 $totalCheckedin = total($pdo, 'guest', 1);
 $guest = findAll($pdo, 'guest','id',10,$offset,0);
@@ -48,11 +55,13 @@ switch ($case) {
   echo loadTemplate('list.html.php',$totalGuest,$guest,$offset, $page, $randstr, $case);
     break;
   case 'checkedin':
-  echo loadTemplate('checkedin.html.php',$totalCheckedin,$checkedin,$offset, $page, $randstr, $case);
+  echo loadTemplate('list.html.php',$totalCheckedin,$checkedin,$offset, $page, $randstr, $case);
     break;
   case 'addguest':
   echo loadTemplate('addguest.html.php');
    break;
+   case 'search':
+   echo loadTemplate('list.html.php',$totalsearch,$search, $offset, $page, $randstr, $case);
   default:
   // echo loadTemplate('list.html.php',$total,$variables);
   break;

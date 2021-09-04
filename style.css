@@ -10,16 +10,17 @@ ul {
   justify-content: center;
   font-family: 'Lobster', cursive;
   font-size: 24px;
-  font-weight: bold;
 }
 
 .list {
   width: 40%;
-  justify-content: center;
 }
 
+.checkedin {
+  width: 30%;
+}
 table {
-  width: 60%;
+  width: 70%;
   border-collapse: collapse;
 }
 .addguest {
@@ -37,35 +38,22 @@ table {
 .currentpage:after {
   content: "]";
 }
+span {
+  font-weight: bold;
+}
 
- .one {
+.one {
   color: blue;
+
 }
 
 .two {
   color: blue;
 }
 
-.thre {
+.three {
   color: red;
 }
-
-#top {
-  border-bottom: 3px solid black;
-}
-
-.top {
-  display: grid;
-    border-bottom: 1px solid black;
-  align-content: space-evenly;
-  grid-template-columns: auto auto auto;
-  grid-gap: 50px;
-}
-
-#parent {
-  text-align: justify;
-  /* font-size: 0.1px; /* IE 9/10 fix */ */
-}
-#parent li {
-  display: inline-block;
+.search-box {
+  width: 40%;
 }

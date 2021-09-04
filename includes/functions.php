@@ -1,10 +1,11 @@
 <?php
 
- function loadTemplate($templateFileName, $t = [],$v =[],$offset =[], $p = [], $r = [], $c = []){
+ function loadTemplate($templateFileName, $t = [], $v =[], $off =[], $p = [], $r = [], $c = []){
 
   ob_start();
   $total = $t;
   $variables = $v;
+  $offset = $off;
   $page = $p;
   $randstr = $r;
   $case = $c;
@@ -69,9 +70,12 @@ function save($pdo, $table, $primaryKey, $record) {
   }
 }
 
-function findAll($pdo, $table, $orderBy = null, $limit = null, $offset = null, $checkin = []){
+function findAll($pdo, $table, $orderBy = null, $limit = null, $offset = null, $checkin = [], $like = []){
 $query = 'SELECT * FROM `' . $table . '` WHERE `checkin`=' . $checkin . '';
 
+if($like !=null){
+  $query .= " AND `name` LIKE '%$like%' OR `surname` LIKE '%$like%' ";
+}
 if($orderBy != null) {
   $query .= ' ORDER BY ' . $orderBy;
 }
@@ -89,23 +93,17 @@ $result = query($pdo, $query);
 return $result->fetchAll();
 }
 
-function total($pdo, $table, $checkin){
-  $query = query($pdo,'SELECT COUNT(*) FROM `' . $table . '` WHERE `checkin`=' . $checkin . '');
-  $result = $query->fetchAll();
+function total($pdo, $table, $checkin, $like = []){
+  $sql = "SELECT COUNT(*) FROM `$table` WHERE `checkin`=$checkin ";
+  if($like !=null){
+    $sql .= " AND `name` LIKE '%$like%' OR `surname` LIKE '%$like%' ";
+  }
+  $query = query($pdo,$sql);
+  $result = $query->fetch(\PDO::FETCH_BOTH);
   if (count($result) > 0) {
       return $result[0];
       }
   else {
       return null;
   }
-}
-
-
-function findById($pdo, $table,$primaryKey, $value){
-$query = 'SELECT * FROM `' . $table . '` WHERE `' . $primaryKey . '` = :value';
-
-$parameters = [':value'=>$value];
-
-$query = query($pdo, $query,$parameters);
-return $query->fetchObject();
 }

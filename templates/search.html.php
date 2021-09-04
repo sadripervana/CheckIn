@@ -1,24 +1,15 @@
 
-  <h1> Guest List</h1>;
-  <div class="search-box">
-    <form  action="" method="post">
-      <input type="text" name="search" placeholder="Search">
-    <button type="submit" placeholder="Search" name="submit-search"><i class="fas fa-search"></button></i>
-    </form>
-  </div>
 
+  <h1> Search List</h1>
 <div class="list">
-  <ul id="parent" data-role="listview" data-inline='true'  data-inset="true">
-<table>
-
+  <ul id="parent" data-role="listview" data-inline='true' data-filter="true" data-filter-placeholder="Search guest..." data-inset="true">
+    <table>
 
       <div id="top">
       <tr>
           <td><span class="one">Name</span></td>
           <td><span class="two">Surname</span></td>
-          <?php  if($case == 'home'): ?>
           <td><span class="three">CheckIN</span></td>
-        <?php endif; ?>
       </tr>
         </div>
       <?php
@@ -37,16 +28,13 @@
          </form>
              ';
           ?>
-        <?php else : ?>
-          <tr>
-            <td> <li class="one"><?= htmlspecialchars($variables[$i]['name'], ENT_QUOTES, 'UTF-8') ?></li></td>
-            <td><li class="two"><?= htmlspecialchars($variables[$i]['surname'], ENT_QUOTES, 'UTF-8')?></li></td>
-          <?php endif; ?>
+        <?php endif; ?>
         <?php endfor; ?>
         </li>
       </td>
     </tr>
-</table>
+
+  </table>
 </ul>
 </div>
 
@@ -55,7 +43,7 @@
 
 $numPages = ceil($total/10);
 for($i = 1; $i <= $numPages; $i++){
-  if ($case == 'home') {
+  if ($case == 'search') {
     if($i == $page){
       echo "<a class='currentpage'  href='index.php?p=home&page=$i&r=$randstr'> $i </a>";
     }

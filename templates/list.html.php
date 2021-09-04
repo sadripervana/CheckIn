@@ -1,12 +1,21 @@
 
-  <h1> Guest List</h1>
-
+  <?php  if($case == 'home' ): ?>
+<h1> Guest List</h1>
+<?php else: ?>
+  <h1> Checkedin List</h1>
+  <?php endif; ?>
 
 <div class="list">
   <div class="search-box">
-    <form  action="" method="post">
+    <form
+      action="" method="post">
       <input type="text" name="search" placeholder="Search">
-    <button type="submit"  class = "ui-btn ui-icon-search ui-btn-icon-bottom" data-icon='search' placeholder="Search" name="submit-search"><i class="fas fa-search"></button></i>
+      <button type="submit"
+
+
+
+        class ="ui-btn ui-icon-search ui-btn-icon-bottom"
+      data-icon="search" placeholder="Search" name="submit-search" value=null> search</button>
     </form>
   </div>
   <ul id="parent" data-role="listview" data-inline='true'  data-inset="true">
@@ -18,7 +27,7 @@
       <tr>
           <td><span class="one">Name</span></td>
           <td><span class="two">Surname</span></td>
-          <?php  if($case == 'home'): ?>
+          <?php  if($case == 'home' ): ?>
           <td><span class="three">CheckIN</span></td>
         <?php endif; ?>
       </tr>
@@ -26,7 +35,7 @@
       <?php
         for($i =0; $i < ($total - $offset) && $i < 10; $i++):
       ?>
-      <?php  if($variables[$i]['checkin'] == 0): ?>
+      <?php  if($variables[$i]['checkin'] == 0 || $case == 'home' ): ?>
     <tr>
       <td><li><?= htmlspecialchars($variables[$i]['name'], ENT_QUOTES, 'UTF-8') ?></li></td>
       <td><li><?= htmlspecialchars($variables[$i]['surname'], ENT_QUOTES, 'UTF-8')?></li></td>
@@ -41,7 +50,7 @@
           ?>
           </li>
           </td>
-        <?php else : ?>
+        <?php elseif($variables[$i]['checkin'] == 1 || $case == 'checkedin') : ?>
           <tr>
             <td><li><?= htmlspecialchars($variables[$i]['name'], ENT_QUOTES, 'UTF-8') ?></li></td>
             <td><li><?= htmlspecialchars($variables[$i]['surname'], ENT_QUOTES, 'UTF-8')?></li></td>

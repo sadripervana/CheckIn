@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 
 $page =  $_GET['page'] ?? 1;
 $offset = ($page-1)*10;
-
+$case = $_GET['p'] ?? null;
 
   if(isset($_POST['id'])){
     $primaryKey =$_POST['id'] ;
@@ -20,6 +20,7 @@ $offset = ($page-1)*10;
     }
     $record = ['id'=>$values[0], 'name'=>$values[1], 'surname'=>$values[2], 'checkin'=>'1'];
     save($pdo, 'guest', 'id', $record);
+
     header('location: index.php?p=home&r=$randstr');
   }
 
@@ -35,10 +36,21 @@ $offset = ($page-1)*10;
 
     if (isset($_POST['submit-search'])) {
       $like = sanitizeString($_POST['search']);
-      $search = findAll($pdo, 'guest', 'id', 10, $offset, 0, $like);
-      $totalsearch = total($pdo, 'guest', 1, $like);
-      header('location: index.php?p=search&r=$randstr');
+      $checkin = null;
+      if($case == 'home')
+      {
+        $checkin = 0;
+        $search = findAll($pdo, 'guest', 'name', 10, $offset, $checkin , $like);
+        $totalsearch = total($pdo, 'guest', $checkin, $like);
+        echo loadTemplate('list.html.php',$totalsearch , $search , $offset, $page, $randstr, $case);
+      } else{
+        $checkin = 1;
+        $search = findAll($pdo, 'guest', 'name', 10, $offset, $checkin , $like);
+        $totalsearch = total($pdo, 'guest', $checkin, $like);
+        echo loadTemplate('list.html.php',$totalsearch , $search , $offset, $page, $randstr, $case);
+      }
     }
+
 
 $totalGuest = total($pdo, 'guest', 0);
 $totalCheckedin = total($pdo, 'guest', 1);
@@ -46,7 +58,7 @@ $guest = findAll($pdo, 'guest', 'name', 10, $offset, 0);
 $checkedin = findAll($pdo, 'guest', 'name', 10, $offset, 1);
 
 
-$case = $_GET['p'];
+
 switch ($case) {
   case 'home':
   echo loadTemplate('list.html.php',$totalGuest,$guest,$offset, $page, $randstr, $case);
@@ -57,11 +69,21 @@ switch ($case) {
   case 'addguest':
   echo loadTemplate('addguest.html.php');
    break;
-   case 'search':
-   echo loadTemplate('list.html.php',$totalsearch = [], $search = [], $offset, $page, $randstr, $case);
+
+   case 'searchH':
+   $like = sanitizeString($_GET['search']);
+   $checkin = null;
+   var_dump(123);die;
+     $checkin = 0;
+
+     $search = findAll($pdo, 'guest', 'name', 10, $offset, $checkin , $like);
+     $totalsearch = total($pdo, 'guest', $checkin, $like);
+     echo loadTemplate('search.html.php',$totalsearch , $search , $offset, $page, $randstr, $case);
+     break;
   default:
-  // echo loadTemplate('list.html.php',$total,$variables);
+    header('location: index.php?p=home&r=$randstr');
   break;
 }
+
 require_once 'templates/footer.html.php';
 ?>

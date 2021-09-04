@@ -68,22 +68,22 @@ function save($pdo, $table, $primaryKey, $record) {
   }
 }
 
-function findAll($pdo, $table, $orderBy = null, $limit = null, $offset = null, $checkin = [], $like = []){
-$query = 'SELECT * FROM `' . $table . '` WHERE `checkin`=' . $checkin . '';
+function findAll($pdo, $table, $orderBy = null, $limit = null, $offset = null, $checkin = null, $like = null){
+$query = "SELECT * FROM `$table` WHERE `checkin` = $checkin";
 
 if($like !=null){
   $query .= " AND `name` LIKE '%$like%' OR `surname` LIKE '%$like%' ";
 }
 if($orderBy != null) {
-  $query .= ' ORDER BY ' . $orderBy;
+  $query .= " ORDER BY   $orderBy ";
 }
 
 if ($limit != null) {
-  $query .= ' LIMIT ' . $limit;
+  $query .= " LIMIT  $limit ";
 }
 
 if ($offset != null) {
-  $query .= ' OFFSET ' . $offset;
+  $query .= " OFFSET  $offset ";
 }
 
 $result = query($pdo, $query);
@@ -91,7 +91,7 @@ $result = query($pdo, $query);
 return $result->fetchAll();
 }
 
-function total($pdo, $table, $checkin, $like = []){
+function total($pdo, $table, $checkin = null, $like = null){
   $sql = "SELECT COUNT(*) FROM `$table` WHERE `checkin`=$checkin ";
   if($like !=null){
     $sql .= " AND `name` LIKE '%$like%' OR `surname` LIKE '%$like%' ";

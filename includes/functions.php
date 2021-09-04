@@ -1,20 +1,18 @@
 <?php
 
  function loadTemplate($templateFileName, $t = [], $v =[], $off =[], $p = [], $r = [], $c = []){
-
-  ob_start();
-  $total = $t;
-  $variables = $v;
-  $offset = $off;
-  $page = $p;
-  $randstr = $r;
-  $case = $c;
-  include __DIR__ . '/../templates/' . $templateFileName;
+   ob_start();
+    $total = $t;
+    $variables = $v;
+    $offset = $off;
+    $page = $p;
+    $randstr = $r;
+    $case = $c;
+    include __DIR__ . '/../templates/' . $templateFileName;
   return ob_get_clean();
 }
 
-function sanitizeString($var)
-  {
+function sanitizeString($var){
     $var = strip_tags($var);
     $var = htmlentities($var);
     return $var;

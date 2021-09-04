@@ -18,7 +18,7 @@ $offset = ($page-1)*10;
     foreach ($primaryKey as $key => $value ) {
       $values[] = $value;
     }
-    $record = ['id'=>$values[0],'name'=>$values[1],'surname'=>$values[2],'checkin'=>'1'];
+    $record = ['id'=>$values[0], 'name'=>$values[1], 'surname'=>$values[2], 'checkin'=>'1'];
     save($pdo, 'guest', 'id', $record);
     header('location: index.php?p=home&r=$randstr');
   }
@@ -27,25 +27,23 @@ $offset = ($page-1)*10;
       if(isset($_POST['surname'])){
       $name = sanitizeString($_POST['name']) ;
       $surname = sanitizeString($_POST['surname']);
-      $record = ['id'=>null ,'name'=>$name,'surname'=>$surname,'checkin'=>'0'];
+      $record = ['id'=>null ,'name'=>$name,'surname'=>$surname, 'checkin'=>'0'];
       save($pdo, 'guest', 'id', $record);
       header('location: index.php?p=home&r=$randstr');
      }
     }
 
-  $search = [];
-  $totalsearch = [];
     if (isset($_POST['submit-search'])) {
       $like = sanitizeString($_POST['search']);
-      $search = findAll($pdo, 'guest','id',10, $offset, 0, $like);
+      $search = findAll($pdo, 'guest', 'id', 10, $offset, 0, $like);
       $totalsearch = total($pdo, 'guest', 1, $like);
       header('location: index.php?p=search&r=$randstr');
     }
 
 $totalGuest = total($pdo, 'guest', 0);
 $totalCheckedin = total($pdo, 'guest', 1);
-$guest = findAll($pdo, 'guest','id',10,$offset,0);
-$checkedin = findAll($pdo, 'guest','id',10,$offset,1);
+$guest = findAll($pdo, 'guest', 'id', 10, $offset, 0);
+$checkedin = findAll($pdo, 'guest', 'id', 10, $offset, 1);
 
 
 $case = $_GET['p'];
@@ -60,7 +58,7 @@ switch ($case) {
   echo loadTemplate('addguest.html.php');
    break;
    case 'search':
-   echo loadTemplate('list.html.php',$totalsearch,$search, $offset, $page, $randstr, $case);
+   echo loadTemplate('list.html.php',$totalsearch = [], $search = [], $offset, $page, $randstr, $case);
   default:
   // echo loadTemplate('list.html.php',$total,$variables);
   break;

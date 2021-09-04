@@ -1,5 +1,5 @@
 
-  <h1> Guest List</h1>;
+  <h1> Guest List</h1>
   <div class="search-box">
     <form  action="" method="post">
       <input type="text" name="search" placeholder="Search">
@@ -26,9 +26,9 @@
       ?>
       <?php  if($variables[$i]['checkin'] == 0): ?>
     <tr>
-      <td><li class="one"><?= htmlspecialchars($variables[$i]['name'], ENT_QUOTES, 'UTF-8') ?></li></td>
-      <td><li class="two"><?= htmlspecialchars($variables[$i]['surname'], ENT_QUOTES, 'UTF-8')?></li></td>
-      <td><li class="three"><?php echo '
+      <td><li><?= htmlspecialchars($variables[$i]['name'], ENT_QUOTES, 'UTF-8') ?></li></td>
+      <td><li><?= htmlspecialchars($variables[$i]['surname'], ENT_QUOTES, 'UTF-8')?></li></td>
+      <td><li><?php echo '
          <form action="" method="post">
            <input type="hidden" name="id[]" value='.$variables[$i]['id'].'>
            <input type="hidden" name="id[]" value='.$variables[$i]['name'].'>
@@ -37,14 +37,16 @@
          </form>
              ';
           ?>
+          </li>
+          </td>
         <?php else : ?>
           <tr>
-            <td> <li class="one"><?= htmlspecialchars($variables[$i]['name'], ENT_QUOTES, 'UTF-8') ?></li></td>
-            <td><li class="two"><?= htmlspecialchars($variables[$i]['surname'], ENT_QUOTES, 'UTF-8')?></li></td>
+            <td><li><?= htmlspecialchars($variables[$i]['name'], ENT_QUOTES, 'UTF-8') ?></li></td>
+            <td><li><?= htmlspecialchars($variables[$i]['surname'], ENT_QUOTES, 'UTF-8')?></li></td>
           <?php endif; ?>
         <?php endfor; ?>
-        </li>
-      </td>
+
+
     </tr>
 </table>
 </ul>

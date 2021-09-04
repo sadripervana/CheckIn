@@ -11,6 +11,3 @@
     </html>
   _END;
 ?>
-
-<script src="script.js">
-</script>

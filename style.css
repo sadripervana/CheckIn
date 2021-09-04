@@ -6,7 +6,6 @@
 
 
 ul {
-  border: 1px solid black;
   justify-content: center;
   font-family: 'Lobster', cursive;
   font-size: 24px;
@@ -19,7 +18,9 @@ ul {
 .checkedin {
   width: 30%;
 }
-table {
+table,tr {
+
+  border: 1px solid black;
   width: 70%;
   border-collapse: collapse;
 }
@@ -55,5 +56,5 @@ span {
   color: red;
 }
 .search-box {
-  width: 40%;
+  width: 70%;
 }

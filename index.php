@@ -23,8 +23,8 @@ $offset = ($page-1)*10;
     header('location: index.php?p=home&r=$randstr');
   }
 
-    if(isset($_POST['name'] )){
-      if(isset($_POST['surname'])){
+    if(!empty($_POST['name'])){
+      if(!empty($_POST['surname'])){
       $name = sanitizeString($_POST['name']) ;
       $surname = sanitizeString($_POST['surname']);
       $record = ['id'=>null ,'name'=>$name,'surname'=>$surname, 'checkin'=>'0'];
@@ -42,8 +42,8 @@ $offset = ($page-1)*10;
 
 $totalGuest = total($pdo, 'guest', 0);
 $totalCheckedin = total($pdo, 'guest', 1);
-$guest = findAll($pdo, 'guest', 'id', 10, $offset, 0);
-$checkedin = findAll($pdo, 'guest', 'id', 10, $offset, 1);
+$guest = findAll($pdo, 'guest', 'name', 10, $offset, 0);
+$checkedin = findAll($pdo, 'guest', 'name', 10, $offset, 1);
 
 
 $case = $_GET['p'];

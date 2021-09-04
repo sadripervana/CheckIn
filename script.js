@@ -1,12 +1,13 @@
-function hide()
-{
-  var myobj = document.getElementById(this);
-  myobj.remove();
-}
 
-var call = function(elementId)
-{
- var valueOfInput = document.getElementById(elementId);
-  valueOfInput.remove();
-    alert(valueOfInput);
+function ajax(){
+  var ajax = new XMLHttpRequest();
+  ajax.onreadystatechange = function()
+  {
+    if(this.readyState == 4 && this.status ==200)
+    {
+      alert(this.responseText);
+    }
+  };
+  ajax.open("POST","text.txt", true);
+  ajax.send();
 }

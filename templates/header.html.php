@@ -6,6 +6,9 @@ $randstr = substr(md5(rand()), 0, 7);
     <head>
       <meta charset='utf-8'>
       <meta name='viewport' content='width=device-width, initial-scale=1'>
+      <script src="script.js">
+      </script>
+
       <link rel='stylesheet' href='style.css'>
       <link rel='stylesheet' href='jquery.mobile-1.4.5.min.css'>
       <link rel='stylesheet' href='styles.css' type='text/css'>

@@ -1,14 +1,16 @@
 
   <h1> Guest List</h1>
+
+
+<div class="list">
   <div class="search-box">
     <form  action="" method="post">
       <input type="text" name="search" placeholder="Search">
-    <button type="submit" placeholder="Search" name="submit-search"><i class="fas fa-search"></button></i>
+    <button type="submit"  class = "ui-btn ui-icon-search ui-btn-icon-bottom" data-icon='search' placeholder="Search" name="submit-search"><i class="fas fa-search"></button></i>
     </form>
   </div>
-
-<div class="list">
   <ul id="parent" data-role="listview" data-inline='true'  data-inset="true">
+
 <table>
 
 

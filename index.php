@@ -41,15 +41,12 @@ $case = $_GET['p'] ?? null;
       if($case == 'home')
       {
         $checkin = 0;
-        $search = findAll($pdo, 'guest', 'name', 10, $offset, $checkin , $like);
-        $totalsearch = total($pdo, 'guest', $checkin, $like);
-        echo loadTemplate('list.html.php',$totalsearch , $search , $offset, $page, $randstr, $case);
       } else{
         $checkin = 1;
-        $search = findAll($pdo, 'guest', 'name', 10, $offset, $checkin , $like);
-        $totalsearch = total($pdo, 'guest', $checkin, $like);
-        echo loadTemplate('list.html.php',$totalsearch , $search , $offset, $page, $randstr, $case);
       }
+      $search = findAll($pdo, 'guest', 'name', 10, $offset, $checkin , $like);
+      $totalsearch = total($pdo, 'guest', $checkin, $like);
+      echo loadTemplate('list.html.php',$totalsearch , $search , $offset, $page, $randstr, $case);
     }
 
 

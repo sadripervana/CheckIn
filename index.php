@@ -26,8 +26,8 @@ $case = $_GET['p'] ?? null;
 
     if(!empty($_POST['name'])){
       if(!empty($_POST['surname'])){
-      $name = sanitizeString($_POST['name']) ;
-      $surname = sanitizeString($_POST['surname']);
+      $name = ucfirst(sanitizeString($_POST['name'])) ;
+      $surname = ucfirst(sanitizeString($_POST['surname']));
       $record = ['id'=>null ,'name'=>$name,'surname'=>$surname, 'checkin'=>'0'];
       save($pdo, 'guest', 'id', $record);
       header('location: index.php?p=home&r=$randstr');

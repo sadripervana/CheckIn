@@ -26,9 +26,9 @@ $randstr = substr(md5(rand()), 0, 7);
     <body>
       <div data-role='page'>
         <div data-role='header'>
-          <div>Guest CheckIN</div>
+          <div class="guest">Guest CheckIN</div>
         </div>
-        <div data-role='content'>
+        <div class='content' data-role='content'>
   _MAIN;
 
   echo <<<_GUEST
@@ -41,4 +41,4 @@ $randstr = substr(md5(rand()), 0, 7);
               data-transition="slide" href='index.php?p=addguest&r=$randstr''>Add Guest</a>
           </div>
   _GUEST;
-  echo "<image src='image.jpeg' width='40%' height='250px' >";
+  // echo "<image src='image.jpeg' width='40%' height='250px' >";

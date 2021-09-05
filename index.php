@@ -22,7 +22,7 @@ $case = $_GET['p'] ?? null;
     save($pdo, 'guest', 'id', $record);
 
     header('location: index.php?p=home&r=$randstr');
-  }
+   }
 
     if(!empty($_POST['name'])){
       if(!empty($_POST['surname'])){
@@ -54,8 +54,6 @@ $totalGuest = total($pdo, 'guest', 0);
 $totalCheckedin = total($pdo, 'guest', 1);
 $guest = findAll($pdo, 'guest', 'name', 10, $offset, 0);
 $checkedin = findAll($pdo, 'guest', 'name', 10, $offset, 1);
-
-
 
 switch ($case) {
   case 'home':

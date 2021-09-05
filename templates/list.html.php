@@ -14,13 +14,12 @@
     </form>
   </div>
 
-  <ul id="parent" data-role="listview" data-inline='true'  data-inset="true">
     <table>
       <tr>
           <th>Name</th>
           <th>Surname</th>
           <?php  if($case == 'home' ): ?>
-          <th>CheckIN</thd>
+          <th>CheckIn</thd>
         <?php endif; ?>
       </tr>
         <?php
@@ -28,10 +27,10 @@
           ?>
           <?php  if($variables[$i]['checkin'] == 0 && $case == 'home' ): ?>
       <tr>
-        <td><li><?= htmlspecialchars($variables[$i]['name'], ENT_QUOTES, 'UTF-8') ?></li></td>
-        <td><li><?= htmlspecialchars($variables[$i]['surname'], ENT_QUOTES, 'UTF-8')?></li></td>
-        <td><li>
-              <?php echo '
+        <td><?= htmlspecialchars($variables[$i]['name'], ENT_QUOTES, 'UTF-8') ?></td>
+        <td><?= htmlspecialchars($variables[$i]['surname'], ENT_QUOTES, 'UTF-8')?></td>
+        <td>
+            <?php echo '
                <form  action="" method="post">
                  <input type="hidden" name="id[]" value='.$variables[$i]['id'].'>
                  <input type="hidden" name="id[]" value='.$variables[$i]['name'].'>
@@ -40,15 +39,14 @@
                    data-transition="slide" type="submit" class="btn" value="CheckIn">
                </form>';
                ?>
-            </li>
-          </td>
+        </td>
           <?php elseif($variables[$i]['checkin'] == 1 && $case == 'checkedin') : ?>
-          <tr>
-            <td><li><?= htmlspecialchars($variables[$i]['name'], ENT_QUOTES, 'UTF-8') ?></li></td>
-            <td><li><?= htmlspecialchars($variables[$i]['surname'], ENT_QUOTES, 'UTF-8')?></li></td>
-            <?php endif; ?>
-          <?php endfor; ?>
-         </tr>
+      <tr>
+        <td><?= htmlspecialchars($variables[$i]['name'], ENT_QUOTES, 'UTF-8') ?></td>
+        <td><?= htmlspecialchars($variables[$i]['surname'], ENT_QUOTES, 'UTF-8')?></td>
+        <?php endif; ?>
+        <?php endfor; ?>
+      </tr>
       </table>
   </ul>
 </div>

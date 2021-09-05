@@ -8,6 +8,16 @@
   outline: 0;
 }
 
+h1 {
+  color:white;
+}
+
+.guest,h3, h4
+{
+  color: #1CB5E0;
+}
+
+
 .addguest {
   text-align: center;
   width: 200px;
@@ -32,6 +42,7 @@
 background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
 opacity: .8;
 }
+
 
 table {
  width: 40%;
@@ -66,11 +77,8 @@ tr:nth-child(even) {
 
 }
 
-h1,h3 {
-  color:white;
-}
-
-.guest, h4
-{
-  color: #1CB5E0;
+.center {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
 }

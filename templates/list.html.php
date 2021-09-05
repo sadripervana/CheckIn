@@ -1,18 +1,4 @@
 
-  <?php  if($case == 'home' ): ?>
-<h1> Guest List</h1>
-<?php else: ?>
-  <h1> Checkedin List</h1>
-  <?php endif; ?>
-
-<div class="list">
-  <div class="search-box">
-    <form action="" method="post">
-     <input type="text" name="search" placeholder="Search">
-     <button type="submit" class ="ui-btn ui-icon-search ui-btn-icon-bottom"
-      data-icon="search" placeholder="Search" name="submit-search"></button>
-    </form>
-  </div>
 
     <table>
       <tr>

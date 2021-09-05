@@ -7,9 +7,9 @@ error_reporting(E_ALL);
   require_once 'includes/DatabaseConnection.inc.php';
   require_once 'includes/functions.php';
 
-$page =  $_GET['page'] ?? 1;
+
 $offset = ($page-1)*10;
-$case = $_GET['p'] ?? null;
+
 
   if(isset($_POST['id'])){
     $primaryKey =$_POST['id'] ;

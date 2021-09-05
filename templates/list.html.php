@@ -10,7 +10,7 @@
     <form action="" method="post">
      <input type="text" name="search" placeholder="Search">
      <button type="submit" class ="ui-btn ui-icon-search ui-btn-icon-bottom"
-      data-icon="search" placeholder="Search" name="submit-search"s></button>
+      data-icon="search" placeholder="Search" name="submit-search"></button>
     </form>
   </div>
 
@@ -60,7 +60,7 @@
   for($i = 1; $i <= $numPages; $i++){
     if ($case == 'home') {
       if($i == $page){
-        echo "<a class='currentpage'  href='index.php?p=home&page=$i&r=$randstr'> $i </a>";
+        echo "<a class='currentpage' href='index.php?p=home&page=$i&r=$randstr'> $i </a>";
       }
       else {
         echo "<a href='index.php?p=home&page=$i&r=$randstr'> $i </a>";

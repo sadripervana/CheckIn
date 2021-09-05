@@ -38,7 +38,6 @@ $case = $_GET['p'] ?? null;
   if (isset($_POST['submit-search'])) {
     $searchActive = TRUE;
     $like = sanitizeString($_POST['search']);
-    $checkin = null;
       if($case == 'home')
       {
         $checkin = 0;
@@ -78,4 +77,4 @@ switch ($case) {
   break;
 }
 
-echo loadTemplate('footer.html.php'); 
+echo loadTemplate('footer.html.php');

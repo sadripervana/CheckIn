@@ -2,5 +2,5 @@
 
 <input type="text" data-inline="true" name="name" placeholder="Name">
 <input type="text" data-inline="true" name="surname" placeholder="Surname">
-<input type="submit"  onclick="window.location='index.php?p=searchH&r=$randstr'" data-icon="plus" name="btn" value="Add">
+<input type="submit" data-icon="plus" name="btn" value="Add">
 </form>

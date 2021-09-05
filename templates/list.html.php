@@ -15,7 +15,7 @@
 
 
         class ="ui-btn ui-icon-search ui-btn-icon-bottom"
-      data-icon="search" placeholder="Search" name="submit-search" value=null> search</button>
+      data-icon="search" placeholder="Search" name="submit-search" value=null></button>
     </form>
   </div>
   <ul id="parent" data-role="listview" data-inline='true'  data-inset="true">
@@ -35,7 +35,7 @@
       <?php
         for($i =0; $i < ($total - $offset) && $i < 10; $i++):
       ?>
-      <?php  if($variables[$i]['checkin'] == 0 || $case == 'home' ): ?>
+      <?php  if($variables[$i]['checkin'] == 0 && $case == 'home' ): ?>
     <tr>
       <td><li><?= htmlspecialchars($variables[$i]['name'], ENT_QUOTES, 'UTF-8') ?></li></td>
       <td><li><?= htmlspecialchars($variables[$i]['surname'], ENT_QUOTES, 'UTF-8')?></li></td>
@@ -50,7 +50,7 @@
           ?>
           </li>
           </td>
-        <?php elseif($variables[$i]['checkin'] == 1 || $case == 'checkedin') : ?>
+        <?php elseif($variables[$i]['checkin'] == 1 && $case == 'checkedin') : ?>
           <tr>
             <td><li><?= htmlspecialchars($variables[$i]['name'], ENT_QUOTES, 'UTF-8') ?></li></td>
             <td><li><?= htmlspecialchars($variables[$i]['surname'], ENT_QUOTES, 'UTF-8')?></li></td>

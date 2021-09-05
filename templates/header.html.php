@@ -12,8 +12,6 @@ $randstr = substr(md5(rand()), 0, 7);
       <link rel='stylesheet' href='style.css'>
       <link rel='stylesheet' href='jquery.mobile-1.4.5.min.css'>
       <link rel='stylesheet' href='styles.css' type='text/css'>
-      <script src='jquery-2.2.4.min.js'></script>
-      <script src='jquery.mobile-1.4.5.min.js'></script>
       <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
       <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
       <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>

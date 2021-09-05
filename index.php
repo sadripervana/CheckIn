@@ -69,17 +69,6 @@ switch ($case) {
   case 'addguest':
   echo loadTemplate('addguest.html.php');
    break;
-
-   case 'searchH':
-   $like = sanitizeString($_GET['search']);
-   $checkin = null;
-   var_dump(123);die;
-     $checkin = 0;
-
-     $search = findAll($pdo, 'guest', 'name', 10, $offset, $checkin , $like);
-     $totalsearch = total($pdo, 'guest', $checkin, $like);
-     echo loadTemplate('search.html.php',$totalsearch , $search , $offset, $page, $randstr, $case);
-     break;
   default:
     header('location: index.php?p=home&r=$randstr');
   break;

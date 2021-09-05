@@ -34,9 +34,11 @@ $case = $_GET['p'] ?? null;
      }
     }
 
-    if (isset($_POST['submit-search'])) {
-      $like = sanitizeString($_POST['search']);
-      $checkin = null;
+  $searchActive = FALSE;
+  if (isset($_POST['submit-search'])) {
+    $searchActive = TRUE;
+    $like = sanitizeString($_POST['search']);
+    $checkin = null;
       if($case == 'home')
       {
         $checkin = 0;
@@ -61,9 +63,11 @@ $checkedin = findAll($pdo, 'guest', 'name', 10, $offset, 1);
 
 switch ($case) {
   case 'home':
+  if(!$searchActive)
   echo loadTemplate('list.html.php',$totalGuest,$guest,$offset, $page, $randstr, $case);
     break;
   case 'checkedin':
+  if(!$searchActive)
   echo loadTemplate('list.html.php',$totalCheckedin,$checkedin,$offset, $page, $randstr, $case);
     break;
   case 'addguest':
@@ -74,5 +78,4 @@ switch ($case) {
   break;
 }
 
-require_once 'templates/footer.html.php';
-?>
+echo loadTemplate('footer.html.php'); 

@@ -2,22 +2,14 @@
 
 * {
   text-align: center;
-  margin: 0 auto;
   justify-content: center;
-  margin:0;
+  margin: 0 auto;
   padding: 0;
   outline: 0;
 }
 
-ul {
-  justify-content: center;
-  font-family: 'Lobster', cursive;
-  font-size: 24px;
-}
-
 .addguest {
   text-align: center;
-  margin: 0 auto;
   width: 200px;
   height: 200px;
 }
@@ -32,36 +24,21 @@ ul {
 
 .search-box {
   display: flex;
-  position: relative;
   z-index: 1;
-  left: 30%;
-  top: 70%;
-  width: 40%;
+  width: 100%;
 }
 
 .content{
- position: absolute;
- left: 0;
- top: 0;
- bottom: 0;
- right: 0;
- z-index: 1;
 background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
 opacity: .7;
 }
 
 table{
- position: absolute;
- z-index: 2;
- left: 50%;
- top: 65%;
- transform: translate(-50%,-50%);
- width: 40%;
+ width: 100%;
  border-collapse: collapse;
  border-spacing: 0;
  box-shadow: 0 2px 15px rgba(64,64,64,.7);
- border-radius: 12px 12px 0 0;
- overflow: hidden;
+ border-radius: 12px 12px ;
 
 }
 td , th{
@@ -84,11 +61,25 @@ tr{
 }
 
 tr:nth-child(even){
- background-color: #d8eaf2;
+ background-color: #b7e4f7;
 }
 
-h1,h3, .guest
-{
-  z-index: 5;
-  color: white;
+h1,h3{
+  color:white;
 }
+
+.guest, h4
+{
+  color: #1CB5E0;
+}
+
+.list { text-align: center; }
+
+.list ul {
+  display:inline-table;  width: 40%;
+  font-family: 'Lobster', cursive;
+  font-size: 24px;
+
+  border-radius: 12px 12px ;
+}
+.list li { display:inline; }

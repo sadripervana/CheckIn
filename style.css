@@ -17,19 +17,10 @@ h1 {
   color: #1CB5E0;
 }
 
-
 .addguest {
   text-align: center;
   width: 200px;
   height: 200px;
-}
-
-.currentpage:before {
-  content: "[";
-}
-
-.currentpage:after {
-  content: "]";
 }
 
 .search-box {

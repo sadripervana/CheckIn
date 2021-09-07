@@ -44,14 +44,14 @@
   for($i = 1; $i <= $numPages; $i++){
     if ($case == 'home') {
       if($i == $page){
-        echo "<a class='currentpage' href='index.php?p=home&page=$i&r=$randstr'> $i </a>";
+        echo "<a class='currentpage' href='index.php?p=home&page=$i&r=$randstr'>[$i]</a>";
       }
       else {
         echo "<a href='index.php?p=home&page=$i&r=$randstr'> $i </a>";
       }
     } else {
       if($i == $page){
-        echo "<a class='currentpage'  href='index.php?p=checkedin&page=$i&r=$randstr'> $i </a>";
+        echo "<a class='currentpage'  href='index.php?p=checkedin&page=$i&r=$randstr'> [$i] </a>";
       }
       else {
         echo "<a href='index.php?p=checkedin&page=$i&r=$randstr'> $i </a>";

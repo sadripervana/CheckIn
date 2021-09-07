@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
 $data = 'checkin';
-$user = 'root';
-$pass = '';
+$user = 'admin';
+$pass = 'admin';
 $chrs = 'utf8mb4';
 $attr = "mysql:host=$host;dbname=$data;charset=$chrs";
 $opts =

@@ -24,6 +24,11 @@ function query($pdo, $sql, $parameters = []){
   return $query;
 }
 
+function createDatabase($pdo, $name){
+   query($pdo, "CREATE DATABASE IF NOT EXISTS $name");
+   echo "Database '$name' created or already exists.<br>";
+}
+
 function createTable($pdo, $name, $query){
    query($pdo,"CREATE TABLE IF NOT EXISTS $name($query)");
    echo "Table '$name' created or already exists.<br>";

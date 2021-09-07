@@ -1,33 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto');
 
-* {
-  text-align: center;
-  justify-content: center;
+.center {
+ text-align: center;
+ justify-content: center;
   margin: 0 auto;
-  padding: 0;
-  outline: 0;
 }
 
 h1 {
   color:white;
 }
+nav{
+  color: red !important;
+}
 
-.guest,h3, h4
-{
+.header{
+  display: flex;
+  flex-direction: row;
+  margin:10px ;
+ color: #1CB5E0;
+}
+
+
+.guest,h3, h4, a
+{ 
   color: #1CB5E0;
 }
 
-.addguest {
-  text-align: center;
-  width: 200px;
-  height: 200px;
-}
 
-.search-box {
-  display: flex;
-  z-index: 1;
-  width: 100%;
-}
 
 .content{
 background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
@@ -36,14 +35,19 @@ opacity: .8;
 
 
 table {
- width: 40%;
- border-spacing: 0;
- box-shadow: 0 2px 15px rgba(64,64,64,.7);
- font-family: 'Lobster', cursive;
- font-size: 24px;
- border-radius: 20px 20px ;
- overflow: hidden;
+  text-align: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 40%;
+  border-spacing: 0;
+  box-shadow: 0 2px 15px rgba(64,64,64,.7);
+  font-family: 'Lobster', cursive;
+  font-size: 24px;
+  border-radius: 20px 20px ;
+  overflow: hidden;
+  margin-bottom: 30px;
 }
+
 td {
  padding: 3px 7px;
 }
@@ -65,11 +69,91 @@ tr {
 
 tr:nth-child(even) {
  background-color: #b7e4f7;
-
 }
 
-.center {
+.search {
   display: flex;
   flex-direction: row;
-  width: 40%;
+}
+
+#one {
+  float: left;
+  width: 60%;
+}
+#two {
+  float: right;
+  width: 30%;
+}
+
+button {
+  border-radius: 17px  ;
+}
+
+input {
+  height: 38px;
+  border-color: #b7e4f7;
+  border-radius: 17px  ;
+  margin: 50px;
+}
+
+a:link { 
+  text-decoration: none;
+  color: #1CB5E0; 
+}
+a:hover { transition: all .2s ease-in-out;
+  transform: scale(1.1);
+}
+a i:hover { transition: all .2s ease-in-out;
+  transform: scale(1.1);
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.guest {
+ display: flex;
+ justify-content:space-between ;
+ align-items: center;
+ padding: 10px 10%;
+}
+nav  {
+  align-items:center;
+}
+
+.nav__links li {
+  display: inline-block;
+  align-items:baseline;
+  padding: 0px 20px;
+}
+ .nav__links li a {
+  transition: all 0.3s ease 0s;
+}
+.nav__links li a:hover{
+  color: red;
+}
+
+.logo{
+  cursor: pointer;
+}
+
+.search {
+  margin-left: 30%;
+  margin-bottom:5px ;
+}
+
+.addguest {
+  height: 70vh;
+}
+
+.addguest  input{
+  display: block;
+  width: 250px;
+}
+
+.addguest  {
+  position: relative;
+  left:40%;
 }

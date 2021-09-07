@@ -10,7 +10,7 @@
     require_once 'includes/DatabaseConnection.inc.php';
     require_once 'includes/functions.php';
 
-    createDatabase($pdo, 'checkin');
+    // createDatabase($pdo, 'checkin');
     
  // Duke krijuar tabelen
     createTable($pdo,'guest',

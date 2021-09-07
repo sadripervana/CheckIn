@@ -10,7 +10,6 @@ error_reporting(E_ALL);
 
 $offset = ($page-1)*10;
 
-
   if(isset($_POST['id'])){
     $primaryKey =$_POST['id'] ;
     $primaryKey[] = 1;
@@ -23,6 +22,7 @@ $offset = ($page-1)*10;
 
     header('location: index.php?p=home&r=$randstr');
    }
+
 
     if(!empty($_POST['name'])){
       if(!empty($_POST['surname'])){

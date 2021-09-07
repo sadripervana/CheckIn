@@ -17,12 +17,11 @@
         <td><?= htmlspecialchars($variables[$i]['surname'], ENT_QUOTES, 'UTF-8')?></td>
         <td>
             <?php echo '
-               <form  action="" method="post">
+               <form id="ajaxform" name="ajaxform"  action="" method="post">
                  <input type="hidden" name="id[]" value='.$variables[$i]['id'].'>
                  <input type="hidden" name="id[]" value='.$variables[$i]['name'].'>
                  <input type="hidden" name="id[]" value='.$variables[$i]['surname'].'>
-                 <input data-role="button" data-inline="true" data-icon="check"
-                   data-transition="slide" type="submit" class="btn" value="CheckIn">
+               <input onchange="change()" type="checkbox">
                </form>';
                ?>
         </td>
@@ -37,7 +36,7 @@
   </ul>
 </div>
 
-<div class="select-page">
+<div class="select-page center">
 <h3>Select page:
 <?php
   $numPages = ceil($total/10);

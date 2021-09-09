@@ -1,14 +1,14 @@
 <?php
 
- function loadTemplate($templateFileName, $t = [], $v =[], $off =[], $p = [], $r = [], $c = []){
-   ob_start();
-    $total = $t;
-    $variables = $v;
-    $offset = $off;
-    $page = $p;
-    $randstr = $r;
-    $case = $c;
-    include __DIR__ . '/../templates/' . $templateFileName;
+function loadTemplate($templateFileName, $t = [], $v =[], $off =[], $p = [], $r = [], $c = []){
+ ob_start();
+  $total = $t;
+  $variables = $v;
+  $offset = $off;
+  $page = $p;
+  $randstr = $r;
+  $case = $c;
+  include __DIR__ . '/../templates/' . $templateFileName;
   return ob_get_clean();
 }
 
@@ -26,10 +26,9 @@ function query($pdo, $sql, $parameters = []){
 
 function createDatabase($pdo, $name){
   $pdo->exec("CREATE DATABASE `$name`;
-                CREATE USER '$user'@'localhost' IDENTIFIED BY '$pass';
-                GRANT ALL ON `$name`.* TO '$user'@'localhost';
-                FLUSH PRIVILEGES;")
-        or die(print_r($name->errorInfo(), true));
+    CREATE USER '$user'@'localhost' IDENTIFIED BY '$pass';
+    GRANT ALL ON `$name`.* TO '$user'@'localhost';FLUSH PRIVILEGES;")
+    or die(print_r($name->errorInfo(), true));
 }
 
 function createTable($pdo, $name, $query){
@@ -53,15 +52,9 @@ function insert($pdo, $table, $primaryKey, $fields){
   query($pdo, $query, $fields);
 }
 
-function update($pdo, $table, $primaryKey, $fields){
-  $query = 'UPDATE  `' . $table . '` SET ';
-  foreach ($fields as $key => $value) {
-    $query .= '`' . $key . '` =:' . $key . ',';
-  }
-  $query = rtrim($query, ',');
-  $query .= ' WHERE `' . $primaryKey . '` =:primaryKey';
-  $fields['primaryKey'] = $fields['id'];
-  query($pdo, $query, $fields);
+function update($pdo, $primaryKey){
+  $query = "UPDATE  `guest` SET `checkin` = 1 WHERE `id` = $primaryKey";
+  query($pdo, $query);
 }
 
 function save($pdo, $table, $primaryKey, $record) {
@@ -76,27 +69,29 @@ function save($pdo, $table, $primaryKey, $record) {
   }
 }
 
-function findAll($pdo, $table, $orderBy = null, $limit = null, $offset = null, $checkin = null, $like = null){
-$query = "SELECT * FROM `$table` WHERE `checkin` = $checkin";
+function findAll($pdo, $table, $orderBy = null, $limit = null, 
+  $offset = null, $checkin = null, $like = null)
+{
+  $query = "SELECT * FROM `$table` WHERE `checkin` = $checkin";
 
-if($like !=null){
-  $query .= " AND `name` LIKE '%$like%' OR `surname` LIKE '%$like%' ";
-}
-if($orderBy != null) {
-  $query .= " ORDER BY   $orderBy ";
-}
+  if($like !=null){
+    $query .= " AND `name` LIKE '%$like%' OR `surname` LIKE '%$like%' ";
+  }
+  if($orderBy != null) {
+    $query .= " ORDER BY   $orderBy ";
+  }
 
-if ($limit != null) {
-  $query .= " LIMIT  $limit ";
-}
+  if ($limit != null) {
+    $query .= " LIMIT  $limit ";
+  }
 
-if ($offset != null) {
-  $query .= " OFFSET  $offset ";
-}
+  if ($offset != null) {
+    $query .= " OFFSET  $offset ";
+  }
 
-$result = query($pdo, $query);
+  $result = query($pdo, $query);
 
-return $result->fetchAll();
+  return $result->fetchAll(\PDO::FETCH_BOTH);
 }
 
 function total($pdo, $table, $checkin = null, $like = null){
@@ -107,9 +102,9 @@ function total($pdo, $table, $checkin = null, $like = null){
   $query = query($pdo,$sql);
   $result = $query->fetch(\PDO::FETCH_BOTH);
   if (count($result) > 0) {
-      return $result[0];
-      }
+    return $result[0];
+  }
   else {
-      return null;
+    return null;
   }
 }

@@ -1,30 +1,17 @@
 
-function ajax(){
-  var ajax = new XMLHttpRequest();
-  ajax.onreadystatechange = function()
-  {
-    if(this.readyState == 4 && this.status ==200)
-    {
-      
-      alert(this.responseText);
-    }
-  };
-  ajax.open("POST","text.txt", true);
-  ajax.send();
-}
-
-function change(){
-  setTimeout(function(){
-    location.reload(); }, 10); 
-  var form = $('#ajaxform');
-  var mydata = $("#ajaxform").serialize();
-  console.dir($("#ajaxform").serialize());
-  $.ajax({
-    type: form.attr('method'),
-    url: form.attr('action'),
+$(document).ready(function(){
+  $('.mychoice').change(function(event) {
+  var id = $(this).val();
+  $.ajax({ //Process the form using $.ajax()
+    type: 'post',
+    url: 'isset.php',
     dataType: "json",
-    data: mydata,
+    data: {id:id},
+    success   : function() {
+      $('tr#'+id+'').css('background-color', '#ccc');
+      $('tr#'+id+'').fadeOut('fast');
+    }
   });
-}
 
-
+  });
+});

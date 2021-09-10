@@ -12,10 +12,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-
-
 <form class="addguest"  action="" method="post">
- 
   <div class="form-group row">
     <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
@@ -35,7 +32,6 @@ if (isset($_POST['submit'])) {
       <button type="submit" name="submit" class="btn btn-primary ">Add Guest</button>
     </div>
   </div>
- 
 </form>
 </div>
 

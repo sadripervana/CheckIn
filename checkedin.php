@@ -21,18 +21,20 @@ if (isset($_POST['submit-search'])) {
   </form>
 </nav>
 <table>
-<tr>
-  <th>Name</th>
-  <th>Surname</th>
-</tr>
-  <?php for($i =0; $i < ($totalCheckedin - $offset) && $i < 10; $i++): ?>
-  <?php if($checkedin[$i]['checkin'] == 1) : ?>
-<tr>
-  <td><?= htmlspecialchars($checkedin[$i]['name'], ENT_QUOTES, 'UTF-8') ?></td>
-  <td><?= htmlspecialchars($checkedin[$i]['surname'], ENT_QUOTES, 'UTF-8')?></td>
-  <?php endif; ?>
-  <?php endfor; ?>
-</tr>
+  <tr>
+    <th>Name</th>
+    <th>Surname</th>
+  </tr>
+    <?php for($i =0; $i < ($totalCheckedin - $offset) && $i < 10; $i++): ?>
+    <?php if($checkedin[$i]['checkin'] == 1) : ?>
+  <tr>
+    <td><?= htmlspecialchars($checkedin[$i]['name'], ENT_QUOTES, 'UTF-8') ?>
+    </td>
+    <td><?= htmlspecialchars($checkedin[$i]['surname'], ENT_QUOTES, 'UTF-8')?>
+    </td>
+    <?php endif; ?>
+    <?php endfor; ?>
+  </tr>
 </table>
 </div>
 

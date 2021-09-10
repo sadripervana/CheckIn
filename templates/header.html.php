@@ -33,9 +33,11 @@ $offset = ($page-1)*10;
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <ul class="navbar-nav mr-auto ">
-        <li class="nav-item active"><a class="navbar-brand" href='index.php'>Home</a></li>
-        <li class="nav-item active"><a class="navbar-brand" href='checkedin.php'>CheckedIn</a></li>
-        <li class="nav-item active"><a class="navbar-brand" href='addguest.html.php'>Add Guest</a></li>
+        <li class="nav-item active">
+        <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item "><a class="nav-link" href='checkedin.php'>CheckedIn</a></li>
+        <li class="nav-item "><a class="nav-link" href='addguest.html.php'>Add Guest</a></li>
       </ul>
       </nav>
 

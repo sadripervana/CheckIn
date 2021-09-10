@@ -142,17 +142,19 @@ header a:hover{
 }
 
 .addguest {
-  height: 70vh;
+  height: 80vh;
 }
 
-.addguest  input{
-  display: block;
-  width: 250px;
+.addguest {
+margin: auto;
+width: 30%;
+padding: 50px 50px;
 }
 
-.addguest  {
-  margin-left: 40%;
-  margin: 0 auto !important;
-  justify-content: center;
+label {
+  margin-right: 10px;
 }
 
+.add {
+  padding-top: 10px;
+}

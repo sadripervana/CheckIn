@@ -11,7 +11,7 @@ if(isset($_POST['submit-search'])) {
 }
 
 ?> 
-  <h1 class="center"> Guest List</h1>
+<h1 class="center"> Guest List</h1>
 
 <nav class="navbar navbar-light search">
   <form class="form-inline" action="" method="post">

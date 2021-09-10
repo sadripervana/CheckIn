@@ -11,15 +11,32 @@ if (isset($_POST['submit'])) {
   }
 }
 ?>
-<script src="script.js"></script> 
-<h1 class="center">Add Guest</h1>
-<form class="addguest" action="" method="post">
-  <div class="center center addguestf">
-  <input type="text" data-inline="true" name="name" placeholder="Name">
-  <input type="text" data-inline="true" name="surname" placeholder="Surname">
-  <input type="submit" name="submit" data-icon="plus" name="btn" value="Add">
+
+
+
+<form class="addguest"  action="" method="post">
+ 
+  <div class="form-group row">
+    <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="name" placeholder="Name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label  class="col-sm-2 col-form-label">Surname</label>
+    <div class="col-sm-10">
+      <input type="text" name="surname" class="form-control" placeholder="Surname">
+    </div>
+  </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-10 add">
+      <button type="submit" name="submit" class="btn btn-primary ">Add Guest</button>
+    </div>
+  </div>
+ 
 </form>
-</div>
 </div>
 
 <?php require_once 'templates/footer.html.php' ?>

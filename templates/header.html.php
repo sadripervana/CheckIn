@@ -39,7 +39,7 @@ $offset = ($page-1)*10;
           <a class="nav-link" href='checkedin.php'>CheckedIn</a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link" href='addguest.html.php'>Add Guest</a>
+          <a class="nav-link" href='addguest.php'>Add Guest</a>
         </li>
       </ul>
       </nav>

@@ -1,12 +1,11 @@
 <?php
 
-function loadTemplate($templateFileName, $t = [], $v =[], $off =[], $p = [], $r = [], $c = []){
+function loadTemplate($templateFileName, $t = [], $v =[], $off =[], $p = [], $c = []){
  ob_start();
   $total = $t;
   $variables = $v;
   $offset = $off;
   $page = $p;
-  $randstr = $r;
   $case = $c;
   include __DIR__ . '/../templates/' . $templateFileName;
   return ob_get_clean();

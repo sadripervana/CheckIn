@@ -5,7 +5,6 @@ error_reporting(E_ALL);
   require_once 'includes/DatabaseConnection.inc.php';
   require_once 'includes/functions.php';
 
-$randstr = substr(md5(rand()), 0, 7);
 $page =  $_GET['page'] ?? 1;
 $offset = ($page-1)*10;
 ?>

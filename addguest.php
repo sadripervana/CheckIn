@@ -1,4 +1,9 @@
-<?php require_once 'templates/header.html.php'; 
+<?php 
+require_once 'templates/header.html.php'; 
+require_once 'core/init.php';
+if(!is_logged_in()){
+  login_error_redirect();
+}
 
 if (isset($_POST['submit'])) {
   if(!empty($_POST['name'])){

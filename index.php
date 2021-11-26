@@ -1,6 +1,9 @@
 <?php 
 require_once 'templates/header.html.php';
-
+require_once 'core/init.php';
+if(!is_logged_in()){
+  login_error_redirect();
+}
 $totalGuest = total($pdo, 'guest', 0);
 $guest = findAll($pdo, 'guest', 'name', 10, $offset, 0);
 
@@ -19,6 +22,9 @@ if(isset($_POST['submit-search'])) {
     <button id="two" name="submit-search" class="btn btn-light my-2 my-sm-0" type="submit">
       <i class="fas fa-search"></i>
     </button>
+  </form>
+  <form action="export.php" method="post" class="csv">
+    <input type="submit" name="export" value="CSV EXport" class="btn btn-light my-2 my-sm-0" >
   </form>
 </nav>
 

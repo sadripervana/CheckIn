@@ -21,6 +21,15 @@
      INDEX(name(5))'
    );
 
+    //Krijo tabelen users
+    createTable($pdo,'users',
+    'user_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    email varchar(250) NOT NULL,
+    password longtext NOT NULL'
+);
+
+
+
     $sql =" INSERT INTO `guest` (`id`, `name`, `surname`, `checkin`) VALUES
 (1, 'new', 'user1s', 0),
 (2, 'user2', 'user2s', 0),
@@ -57,8 +66,10 @@
 // Insertin data
  query($pdo, $sql);
 
-
-
+$slqi = "INSERT INTO `users` (`user_id`, `email`, `password`) VALUES
+(1, 'sadripervana@gmail.com', '123456789')";
+// insertin admin data
+query($pdo, $sqli);
     ?>
   </body>
 </html>

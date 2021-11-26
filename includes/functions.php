@@ -1,16 +1,5 @@
 <?php
 
-function loadTemplate($templateFileName, $t = [], $v =[], $off =[], $p = [], $c = []){
- ob_start();
-  $total = $t;
-  $variables = $v;
-  $offset = $off;
-  $page = $p;
-  $case = $c;
-  include __DIR__ . '/../templates/' . $templateFileName;
-  return ob_get_clean();
-}
-
 function sanitizeString($var){
     $var = strip_tags($var);
     $var = htmlentities($var);

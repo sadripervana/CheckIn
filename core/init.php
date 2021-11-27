@@ -14,6 +14,7 @@ if(mysqli_connect_errno()) {
 }
 session_start();
 
+// SOME FUNCTIONS
 function sanitize($dirty) {
 	return htmlentities($dirty, ENT_QUOTES, "UTF-8");
 }
@@ -30,7 +31,6 @@ function display_errors($errors){
 
 function login($user_id){
 	$_SESSION['SBUser'] = $user_id;
-	global $db;
 	header('Location: index.php');
 }
 

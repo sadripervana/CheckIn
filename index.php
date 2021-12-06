@@ -36,8 +36,8 @@ if(isset($_POST['submit-search'])) {
       </tr>
         <?php for($i =0; $i < ($totalGuest - $offset) && $i < 10; $i++):?>
       <tr id="<?=$guest[$i]['id']?>">
-        <td><?= htmlspecialchars($guest[$i]['name'], ENT_QUOTES, 'UTF-8') ?></td>
-        <td><?= htmlspecialchars($guest[$i]['surname'], ENT_QUOTES, 'UTF-8')?></td>
+        <td><?=htmlspecialchars($guest[$i]['name'], ENT_QUOTES, 'UTF-8') ?></td>
+        <td><?=htmlspecialchars($guest[$i]['surname'], ENT_QUOTES, 'UTF-8')?></td>
         <td>
          <input type="hidden" name="id" value='<?=$guest[$i]['id']?>'>
          <input value='<?=$guest[$i]['id']?>' id="id"  class="mychoice" type="checkbox">

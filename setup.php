@@ -23,10 +23,10 @@
 
     //Krijo tabelen users
     createTable($pdo,'users',
-    'user_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    email varchar(250) NOT NULL,
-    password longtext NOT NULL'
-);
+      'user_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+      email varchar(250) NOT NULL,
+      password longtext NOT NULL'
+    );
 
 
 

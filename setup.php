@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Setting up Database data</h1>
-    <?php
-    require_once 'includes/DatabaseConnection.inc.php';
-    require_once 'includes/functions.php';
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>Setting up Database data</h1>
+		<?php
+		require_once 'includes/DatabaseConnection.inc.php';
+		require_once 'includes/functions.php';
 
-    // createDatabase($pdo, 'checkin');
-    
+		// createDatabase($pdo, 'checkin');
+		
  // Duke krijuar tabelen
-    createTable($pdo,'guest',
-    'id MEDIUMINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-     name VARCHAR(15),
-     surname VARCHAR(15),
-     checkin TINYINT DEFAULT 0 NOT NULL,
-     INDEX(name(5))'
-   );
+		createTable($pdo,'guest',
+		'id MEDIUMINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+		 name VARCHAR(15),
+		 surname VARCHAR(15),
+		 checkin TINYINT DEFAULT 0 NOT NULL,
+		 INDEX(name(5))'
+	 );
 
-    //Krijo tabelen users
-    createTable($pdo,'users',
-      'user_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-      email varchar(250) NOT NULL,
-      password longtext NOT NULL'
-    );
+		//Krijo tabelen users
+		createTable($pdo,'users',
+			'user_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+			email varchar(250) NOT NULL,
+			password longtext NOT NULL'
+		);
 
 
 
-    $sql =" INSERT INTO `guest` (`id`, `name`, `surname`, `checkin`) VALUES
+		$sql =" INSERT INTO `guest` (`id`, `name`, `surname`, `checkin`) VALUES
 (1, 'new', 'user1s', 0),
 (2, 'user2', 'user2s', 0),
 (3, 'user3', 'user3s', 10),
@@ -66,10 +66,10 @@
 // Insertin data
  query($pdo, $sql);
 
-$slqi = "INSERT INTO `users` (`user_id`, `email`, `password`) VALUES
+$sqli = "INSERT INTO `users` (`user_id`, `email`, `password`) VALUES
 (1, 'sadripervana@gmail.com', '123456789')";
 // insertin admin data
 query($pdo, $sqli);
-    ?>
-  </body>
+		?>
+	</body>
 </html>

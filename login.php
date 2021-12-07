@@ -47,6 +47,10 @@ $errors = array();
         $errors[] = 'That email doesn\'t exist in our database.';
       }
 
+      if(!password_verify($password, $user['password'])){
+        $errors[] = "The password does not match our records. Please try again."; 
+      }
+
       //check for errors
       if (!empty($errors)){
         echo display_errors($errors);
@@ -58,16 +62,16 @@ $errors = array();
     }
     ?>
   </div>
-  <h2 class="text-center" style="margin-top: 65px;">Login</h2><hr>
+  <h2 class="text-center" style="margin-top: 65px;color: white;">Login</h2><hr>
 
   <form class="addguest"  action="login.php" method="post">
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="text" name="email" id="email" class="form-control" value="<?=$email;?>">
+      <input type="text" name="email" id="email" class="form-control" placeholder="Email..." value="<?=$email;?>">
     </div>
       <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" name="password" id="password" class="form-control" value="<?=$password;?>">
+      <input type="password" name="password" id="password" class="form-control" placeholder="Password..." value="<?=$password;?>">
     </div>
     <div class="form-group">
       <input type="submit" value="Login" class="btn btn-primary">

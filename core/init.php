@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //Connects to database
-$db = mysqli_connect('localhost','admin','admin','logindb');
+$db = mysqli_connect('localhost','admin','admin','checkin');
 
 
  //Checks if there is a connection error

@@ -3,9 +3,9 @@
 require_once 'core/init.php';
 require_once 'templates/header.html.php';
 
-$email = ((isset($_POST['email']))?sanitize($_POST['email']):'');
+$email = ((isset($_POST['email']))?sanitizeString($_POST['email']):'');
 $email = trim($email);
-$password = ((isset($_POST['password']))?sanitize($_POST['password']):'');
+$password = ((isset($_POST['password']))?sanitizeString($_POST['password']):'');
 $password = trim($password);
 
 $errors = array();

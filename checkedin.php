@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'templates/header.html.php';
 
 if(!is_logged_in()){
@@ -27,7 +27,7 @@ if (isset($_POST['submit-search'])) {
   <form action="export1.php" method="post" class="csv">
     <input type="submit" name="export" value="CSV EXport" class="btn btn-light my-2 my-sm-0" >
   </form>
-  
+
 </nav>
 <table>
   <tr>

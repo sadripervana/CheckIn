@@ -16,10 +16,6 @@ if(mysqli_connect_errno()) {
 session_start();
 
 // SOME FUNCTIONS
-function sanitize($dirty) {
-	return htmlentities($dirty, ENT_QUOTES, "UTF-8");
-}
-
 
 function display_errors($errors){
 	$display = '<ul style="margin-top: 60px;" class="bg-danger">';

@@ -2,7 +2,7 @@
 
 function sanitizeString($var){
     $var = strip_tags($var);
-    $var = htmlentities($var);
+    $var = htmlentities($var, ENT_QUOTES, "UTF-8");
     return $var;
   }
 
@@ -10,13 +10,6 @@ function query($pdo, $sql, $parameters = []){
   $query = $pdo->prepare($sql);
   $query->execute($parameters);
   return $query;
-}
-
-function createDatabase($pdo, $name){
-  $pdo->exec("CREATE DATABASE `$name`;
-    CREATE USER '$user'@'localhost' IDENTIFIED BY '$pass';
-    GRANT ALL ON `$name`.* TO '$user'@'localhost';FLUSH PRIVILEGES;")
-    or die(print_r($name->errorInfo(), true));
 }
 
 function createTable($pdo, $name, $query){
@@ -45,19 +38,7 @@ function update($pdo, $primaryKey){
   query($pdo, $query);
 }
 
-function save($pdo, $table, $primaryKey, $record) {
-  try {
-    if($record[$primaryKey] == ''){
-      $record[$primaryKey] = null;
-    }
-    insert($pdo, $table, $primaryKey, $record);
-  }
-  catch (\PDOException $e){
-    update($pdo, $table, $primaryKey, $record);
-  }
-}
-
-function findAll($pdo, $table, $orderBy = null, $limit = null, 
+function findAll($pdo, $table, $orderBy = null, $limit = null,
   $offset = null, $checkin = null, $like = null)
 {
   $query = "SELECT * FROM `$table` WHERE `checkin` = $checkin";

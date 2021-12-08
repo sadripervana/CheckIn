@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 require_once 'includes/DatabaseConnection.inc.php';
 require_once 'includes/functions.php';
 require_once 'core/init.php';
@@ -14,7 +11,7 @@ $offset = ($page-1)*10;
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="script.js"></script>  
+  <script src="script.js"></script>
   <link rel='stylesheet' href='style.css'>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +23,7 @@ $offset = ($page-1)*10;
 <body>
   <header>
     <a href='index.php'>
-      <img src="checkin.png" width="40px" height="40px" alt=""> 
+      <img src="checkin.png" width="40px" height="40px" alt="">
       Guest CheckIn
     </a>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -48,12 +45,9 @@ $offset = ($page-1)*10;
       <?php else : ?>
         <a class="nav-link" href="logout.php">Logout <span class="sr-only">(current)</span></a>
       <?php endif; ?>
-     
+
     </ul>
   </nav>
 </header>
 
 <div class='content' >
-
-
-

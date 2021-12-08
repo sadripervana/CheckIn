@@ -140,6 +140,9 @@ header a:hover{
 .addguest {
     height: 80vh;
 }
+.content {
+    height: 80vh;
+}
 
 .addguest {
     margin: auto;

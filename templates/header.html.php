@@ -40,10 +40,10 @@ $offset = ($page-1)*10;
         </li>
         <li class="nav-item active">
          <?php  if(!is_logged_in()) :?>
-          <a class="nav-link" href="login.php">Login <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="login.php">Login</a>
         </li>
       <?php else : ?>
-        <a class="nav-link" href="logout.php">Logout <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="logout.php">Logout</a>
       <?php endif; ?>
 
     </ul>

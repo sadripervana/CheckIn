@@ -1,10 +1,11 @@
-<?php 
+<?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //Connects to database
-$db = mysqli_connect('localhost','admin','admin','checkin');
+// $db = mysqli_connect('localhost','admin','admin','checkin');
+$db = mysqli_connect('localhost','root','','checkin');
 
 
  //Checks if there is a connection error
@@ -26,7 +27,7 @@ function display_errors($errors){
 		$display .= '<li class="text-danger">'.$error.'</li>';
 	}
 	$display .= '</ul>';
-	return $display; 	
+	return $display;
 }
 
 function login($user_id){

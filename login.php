@@ -1,4 +1,4 @@
-<?php 
+<?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -16,7 +16,7 @@ $errors = array();
 
 <style type="text/css">
 
-  
+
 </style>
 
 <div id="login-form">
@@ -47,9 +47,9 @@ $errors = array();
         $errors[] = 'That email doesn\'t exist in our database.';
       }
 
-      if(!password_verify($password, $user['password'])){
-        $errors[] = "The password does not match our records. Please try again."; 
-      }
+      // if(!password_verify($password, $user['password'])){
+      //   $errors[] = "The password does not match our records. Please try again.";
+      // }
 
       //check for errors
       if (!empty($errors)){
@@ -58,7 +58,7 @@ $errors = array();
         //Log user in
         $user_id = $user['user_id'];
       }
-        login($user_id);      
+        login($user_id);
     }
     ?>
   </div>

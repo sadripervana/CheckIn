@@ -68,17 +68,12 @@ tr {
 
 tr:nth-child(even) {
  background-color: #b7e4f7;
-<<<<<<< HEAD
 }*/
 
 /*.search {
     display: flex;
     flex-direction: row;
 }*/
-=======
-}
->>>>>>> c5fc6090b1c57038231d36d8c2e444d7c21d49ac
-
 
 
 #one {
@@ -146,9 +141,7 @@ header a:hover{
 .addguest {
     height: 80vh;
 }
-.content {
-    height: 80vh;
-}
+
 
 .addguest {
     margin: auto;
@@ -166,19 +159,23 @@ label {
 .footer{
     margin: 20px;
 }
-.search, .one, .two {
+.search, .one, .two , .search-box {
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 5px ;
 }
+.search-box input {
+    margin-right: 10px;
+}
+
 .search .form-inline{
     margin-right: 20px;
 }
 .csv {
-<<<<<<< HEAD
-    margin-left: 10px;
+
+    margin-left: 42px;
 }
 
 @media screen and (max-width : 574px){
@@ -186,18 +183,16 @@ label {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.search-box{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.two{
-   display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-=======
-    margin-right: 43%;
->>>>>>> c5fc6090b1c57038231d36d8c2e444d7c21d49ac
+    }
+    .search-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .two{
+       display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
 }

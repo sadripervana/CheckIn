@@ -1,17 +1,15 @@
-<?php 
-require_once 'templates/header.html.php'; 
+<?php
+require_once 'templates/header.html.php';
 if(!is_logged_in()){
   login_error_redirect();
 }
 
 if (isset($_POST['submit'])) {
-  if(!empty($_POST['name'])){
-    if(!empty($_POST['surname'])){
+  if(!empty($_POST['name']) && !empty($_POST['surname'])){
       $name = ucfirst(sanitizeString($_POST['name'])) ;
       $surname = ucfirst(sanitizeString($_POST['surname']));
       $record = ['id'=>null ,'name'=>$name,'surname'=>$surname, 'checkin'=>'0'];
-      save($pdo, 'guest', 'id', $record);
-    }
+      insert($pdo, 'guest', 'id', $record);
   }
 }
 ?>

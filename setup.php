@@ -11,7 +11,7 @@
 		require_once 'includes/functions.php';
 
 		// createDatabase($pdo, 'checkin');
-		
+
  // Duke krijuar tabelen
 		createTable($pdo,'guest',
 		'id MEDIUMINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -67,7 +67,7 @@
  query($pdo, $sql);
 
 $sqli = "INSERT INTO `users` (`user_id`, `email`, `password`) VALUES
-(1, 'sadripervana@gmail.com', '123456789')";
+(1, 'sadripervana@gmail.com', '$2y$10$C3ajJRcHhfmS9PtAePrVuuK.BUg1MbxSETL7HnqFfmkkK6pNCEy4C')";
 // insertin admin data
 query($pdo, $sqli);
 		?>

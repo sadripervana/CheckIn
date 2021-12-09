@@ -1,23 +1,15 @@
-<?php 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+<?php
 
 require_once 'core/init.php';
 require_once 'templates/header.html.php';
 
-$email = ((isset($_POST['email']))?sanitize($_POST['email']):'');
+$email = ((isset($_POST['email']))?sanitizeString($_POST['email']):'');
 $email = trim($email);
-$password = ((isset($_POST['password']))?sanitize($_POST['password']):'');
+$password = ((isset($_POST['password']))?sanitizeString($_POST['password']):'');
 $password = trim($password);
 
 $errors = array();
 ?>
-
-<style type="text/css">
-
-  
-</style>
 
 <div id="login-form">
   <div>
@@ -48,7 +40,7 @@ $errors = array();
       }
 
       if(!password_verify($password, $user['password'])){
-        $errors[] = "The password does not match our records. Please try again."; 
+        $errors[] = "The password does not match our records. Please try again.";
       }
 
       //check for errors
@@ -58,7 +50,7 @@ $errors = array();
         //Log user in
         $user_id = $user['user_id'];
       }
-        login($user_id);      
+        login($user_id);
     }
     ?>
   </div>

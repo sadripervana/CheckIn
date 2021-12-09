@@ -24,7 +24,7 @@ h1 {
 
 
 .guest,h3, h4, a
-{ 
+{
     color: #1CB5E0;
 }
 
@@ -66,14 +66,20 @@ tr {
     font-family: 'Montserrat', sans-serif;
 }
 
-/*tr:nth-child(even) {
+tr:nth-child(even) {
  background-color: #b7e4f7;
+<<<<<<< HEAD
 }*/
 
 /*.search {
     display: flex;
     flex-direction: row;
 }*/
+=======
+}
+>>>>>>> c5fc6090b1c57038231d36d8c2e444d7c21d49ac
+
+
 
 #one {
     float: left;
@@ -91,9 +97,9 @@ input {
     margin: 50px;
 }
 
-a:link { 
+a:link {
     text-decoration: none;
-    color: #1CB5E0; 
+    color: #1CB5E0;
 }
 
 header {
@@ -140,6 +146,9 @@ header a:hover{
 .addguest {
     height: 80vh;
 }
+.content {
+    height: 80vh;
+}
 
 .addguest {
     margin: auto;
@@ -168,6 +177,7 @@ label {
     margin-right: 20px;
 }
 .csv {
+<<<<<<< HEAD
     margin-left: 10px;
 }
 
@@ -187,4 +197,7 @@ label {
     flex-direction: column;
     align-items: center;
 }
+=======
+    margin-right: 43%;
+>>>>>>> c5fc6090b1c57038231d36d8c2e444d7c21d49ac
 }

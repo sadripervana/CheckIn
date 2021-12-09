@@ -1,10 +1,11 @@
-<?php 
+<?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //Connects to database
-$db = mysqli_connect('localhost','admin','admin','checkin');
+// $db = mysqli_connect('localhost','admin','admin','checkin');
+$db = mysqli_connect('localhost','root','','checkin');
 
 
  //Checks if there is a connection error
@@ -15,10 +16,6 @@ if(mysqli_connect_errno()) {
 session_start();
 
 // SOME FUNCTIONS
-function sanitize($dirty) {
-	return htmlentities($dirty, ENT_QUOTES, "UTF-8");
-}
-
 
 function display_errors($errors){
 	$display = '<ul style="margin-top: 60px;" class="bg-danger">';

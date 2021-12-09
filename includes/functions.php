@@ -2,7 +2,7 @@
 
 function sanitizeString($var){
     $var = strip_tags($var);
-    $var = htmlentities($var);
+    $var = htmlentities($var, ENT_QUOTES, "UTF-8");
     return $var;
   }
 
@@ -10,13 +10,6 @@ function query($pdo, $sql, $parameters = []){
   $query = $pdo->prepare($sql);
   $query->execute($parameters);
   return $query;
-}
-
-function createDatabase($pdo, $name){
-  $pdo->exec("CREATE DATABASE `$name`;
-    CREATE USER '$user'@'localhost' IDENTIFIED BY '$pass';
-    GRANT ALL ON `$name`.* TO '$user'@'localhost';FLUSH PRIVILEGES;")
-    or die(print_r($name->errorInfo(), true));
 }
 
 function createTable($pdo, $name, $query){

@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 require_once 'includes/DatabaseConnection.inc.php';
 require_once 'includes/functions.php';
 require_once 'core/init.php';
@@ -26,7 +23,7 @@ $offset = ($page-1)*10;
 <body>
   <header>
     <a href='index.php'>
-      <img src="checkin.png" width="40px" height="40px" alt=""> 
+      <img src="checkin.png" width="40px" height="40px" alt="">
       Guest CheckIn
     </a>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -43,17 +40,14 @@ $offset = ($page-1)*10;
         </li>
         <li class="nav-item active">
          <?php  if(!is_logged_in()) :?>
-          <a class="nav-link" href="login.php">Login <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="login.php">Login</a>
         </li>
       <?php else : ?>
-        <a class="nav-link" href="logout.php">Logout <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="logout.php">Logout</a>
       <?php endif; ?>
-     
+
     </ul>
   </nav>
 </header>
 
 <div class='content' >
-
-
-

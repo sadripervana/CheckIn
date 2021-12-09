@@ -44,7 +44,7 @@ table {
     font-family: 'Lobster', cursive;
     font-size: 24px;
     overflow: hidden;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 td {
@@ -70,10 +70,10 @@ tr {
  background-color: #b7e4f7;
 }*/
 
-.search {
+/*.search {
     display: flex;
     flex-direction: row;
-}
+}*/
 
 #one {
     float: left;
@@ -135,10 +135,7 @@ header a:hover{
     cursor: pointer;
 }
 
-.search {
-    margin-left: 30%;
-    margin-bottom:5px ;
-}
+
 
 .addguest {
     height: 80vh;
@@ -160,7 +157,34 @@ label {
 .footer{
     margin: 20px;
 }
-
+.search, .one, .two {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px ;
+}
+.search .form-inline{
+    margin-right: 20px;
+}
 .csv {
-    margin-right: 43%;
+    margin-left: 10px;
+}
+
+@media screen and (max-width : 574px){
+    .search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.two{
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 }

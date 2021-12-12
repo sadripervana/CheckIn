@@ -13,6 +13,7 @@
 
 h1 {
     color: white;
+    animation: slideInFromTop 1s ease-in;
 }
 
 .header{
@@ -163,4 +164,13 @@ label {
 
 .csv {
     margin-right: 43%;
+}
+
+@keyframes slideInFromTop{
+    0%{
+        transform:translateY(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'templates/header.html.php';
 if(!is_logged_in()){
   login_error_redirect();
@@ -12,7 +12,7 @@ if(isset($_POST['submit-search'])) {
   $totalGuest = total($pdo, 'guest', 0, $like);
 }
 
-?> 
+?>
 <h1 class="center"> Guest List</h1>
 
 <nav class="navbar navbar-light search">
@@ -27,14 +27,17 @@ if(isset($_POST['submit-search'])) {
   </form>
 </nav>
 
-  
+
     <table>
-      <tr>
+      <thead>
           <th>Name</th>
           <th>Surname</th>
           <th>CheckIn</thd>
-      </tr>
+      </thead>
         <?php for($i =0; $i < ($totalGuest - $offset) && $i < 10; $i++):?>
+          <tbody>
+
+
       <tr id="<?=$guest[$i]['id']?>">
         <td><?=htmlspecialchars($guest[$i]['name'], ENT_QUOTES, 'UTF-8') ?></td>
         <td><?=htmlspecialchars($guest[$i]['surname'], ENT_QUOTES, 'UTF-8')?></td>
@@ -44,6 +47,7 @@ if(isset($_POST['submit-search'])) {
         </td>
         <?php endfor; ?>
        <tr>
+         </tbody>
     </table>
 </div>
 

@@ -1,10 +1,10 @@
 <?php
 $host = 'localhost';
 $data = 'checkin';
-$user = 'admin';
-$pass = 'admin';
-  // $user = 'root';
-  // $pass = '';
+// $user = 'admin';
+// $pass = 'admin';
+  $user = 'root';
+  $pass = '';
 $chrs = 'utf8mb4';
 $attr = "mysql:host=$host;dbname=$data;charset=$chrs";
 $opts =

@@ -146,10 +146,13 @@ header a:hover{
 
 .addguest {
     margin: auto;
-    width: 30%;
+    max-width: 350px;
     padding: 50px 50px;
+    color: #fff;
 }
-
+.addguest input {
+    color: #fff;
+}
 label {
     margin-right: 10px;
 }

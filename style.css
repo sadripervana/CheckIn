@@ -45,7 +45,7 @@ table {
     font-family: 'Lobster', cursive;
     font-size: 24px;
     overflow: hidden;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 td {
@@ -69,8 +69,12 @@ tr {
 
 tr:nth-child(even) {
  background-color: #b7e4f7;
-}
+}*/
 
+/*.search {
+    display: flex;
+    flex-direction: row;
+}*/
 
 
 #one {
@@ -133,17 +137,12 @@ header a:hover{
     cursor: pointer;
 }
 
-.search {
-    margin-left: 30%;
-    margin-bottom:5px ;
-}
+
 
 .addguest {
     height: 80vh;
 }
-.content {
-    height: 80vh;
-}
+
 
 .addguest {
     margin: auto;
@@ -161,9 +160,42 @@ label {
 .footer{
     margin: 20px;
 }
+.search, .one, .two , .search-box {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px ;
+}
+.search-box input {
+    margin-right: 10px;
+}
 
+.search .form-inline{
+    margin-right: 20px;
+}
 .csv {
-    margin-right: 43%;
+
+    margin-left: 42px;
+}
+
+@media screen and (max-width : 574px){
+    .search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .search-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .two{
+       display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
 
 @keyframes slideInFromTop{

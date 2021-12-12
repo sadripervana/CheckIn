@@ -38,7 +38,19 @@ function update($pdo, $primaryKey){
   query($pdo, $query);
 }
 
-function findAll($pdo, $table, $orderBy = null, $limit = null,
+function save($pdo, $table, $primaryKey, $record) {
+  try {
+    if($record[$primaryKey] == ''){
+      $record[$primaryKey] = null;
+    }
+    insert($pdo, $table, $primaryKey, $record);
+  }
+  catch (\PDOException $e){
+    update($pdo, $table, $primaryKey, $record);
+  }
+}
+
+function findAll($pdo, $table, $orderBy = null, $limit = null, 
   $offset = null, $checkin = null, $like = null)
 {
   $query = "SELECT * FROM `$table` WHERE `checkin` = $checkin";

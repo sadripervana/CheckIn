@@ -15,17 +15,7 @@ if(isset($_POST['submit-search'])) {
 ?>
 <h1 class="center"> Guest List</h1>
 
-<nav class="navbar navbar-light search">
-  <form class="form-inline" action="" method="post">
-    <input id="one" class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
-    <button id="two" name="submit-search" class="btn btn-light my-2 my-sm-0" type="submit">
-      <i class="fas fa-search"></i>
-    </button>
-  </form>
-  <form action="export1.php" method="post" class="csv">
-    <input type="submit" name="export" value="CSV EXport" class="btn btn-light my-2 my-sm-0" >
-  </form>
-</nav>
+<?php include_once "templates/search-bar.html" ?>
 
 
     <table>
